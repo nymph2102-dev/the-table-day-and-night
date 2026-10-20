@@ -1,0 +1,11 @@
+review_id,outlet,region,date,score,verdict,quote,url
+R01,스포츠경향,국내,2026-10-06,0,엇갈림,"귀 기울인다, 그럼에도 심심한 건 어쩔 수 없다",https://sports.khan.co.kr/article/202610061647003
+R02,일간스포츠,국내,2026-10-09,2,호평,공간이 품은 시간의 질감을 섬세하게 담아낸 연출력,https://m.news.nate.com/view/20261009n02408
+R03,스포츠Q,국내,2026-10-12,2,호평,평범한 대화가 특별해지는 영화,https://www.newsq.co.kr/news/articleView.html?idxno=500413
+R04,아주경제,국내,2026-10-08,2,호평,흘려듣던 말 한마디가 저마다의 우주임을 담담히 증명한다,https://www.ajunews.com/view/20261008143706632
+R05,한국일보,국내,2026-10-06,1,대체로 호평,완성도 높은 작품이지만 일반 관객에게 통할지는 미지수,https://www.hankookilbo.com/news/article/A2026100616120005270
+R06,연합뉴스 영문판,국내,2026-10-09,1,대체로 호평,카페의 따뜻하고 경쾌한 공기를 훌륭하게 빚어냈다 (번역),https://en.yna.co.kr/view/AEN20261009001900315
+R07,코리아중앙데일리,국내,,1,대체로 호평,작은 순간들이 삶에 대한 큰 생각을 일으킨다 (번역),https://www.koreajoongangdaily.com/entertainment/with-biff-opener-the-table-day-and-night-small-moments-stir-big-thoughts-on-life/12906915
+R08,Variety,해외,,-1,대체로 혹평,"거품뿐, 한 방이 없다 (All Froth, No Kick)",https://variety.com/2026/film/reviews/the-table-day-and-night-review-1236903693/
+R09,Screen Daily,해외,,-1,대체로 혹평,"전작보다 야심 차지만, 알맹이는 덜하다 (번역)",https://www.screendaily.com/reviews/the-table-day-and-night-review-busan-opener-set-in-korean-coffee-shop-relies-heavily-on-its-performances/5221146.article
+R10,UPI,해외,2026-10-08,1,대체로 호평,볼륨을 낮추고 세밀하게 관찰한 관계 이야기 (번역),https://www.upi.com/Entertainment_News/2026/10/08/korea-Busan-film-festival-BIFF-Kim-Jong-kwan-The-Table-Day-and-Night/7551791471877/

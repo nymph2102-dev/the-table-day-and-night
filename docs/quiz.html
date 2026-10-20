@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>낮과 밤 퀴즈</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap quiz">
+  <a class="back" href="./">← 홈</a>
+  <header class="qhead">
+    <p class="eyebrow">리뷰 분석 퀴즈</p>
+    <h1>낮과 밤 퀴즈</h1>
+    <p class="muted">리뷰 분석 결과로 만든 10문제입니다. 보기를 고르면 바로 정답과 해설이 나옵니다.</p>
+  </header>
+
+  <div class="qmeta" aria-live="polite">
+    <span id="qnum">1 / 10</span>
+    <div class="qprog" aria-hidden="true"><i id="qbar"></i></div>
+    <span id="qscore">점수 0</span>
+  </div>
+
+  <section id="card" class="qcard">
+    <h2 id="qtext"></h2>
+    <div id="opts" class="opts" role="group" aria-labelledby="qtext"></div>
+    <div id="explain" class="explain" hidden></div>
+    <button id="nextBtn" class="btn primary" hidden>다음 문제 →</button>
+  </section>
+
+  <section id="result" class="qcard result" hidden>
+    <p class="eyebrow">결과</p>
+    <p class="big"><span id="final">0</span><small> / 10</small></p>
+    <h2 id="verdict"></h2>
+    <p class="muted" id="verdictSub"></p>
+    <div class="row">
+      <button id="retry" class="btn primary">다시 풀기</button>
+      <a class="btn" href="slides.html">슬라이드 보기</a>
+    </div>
+  </section>
+</main>
+
+<script>
+const Q = [
+  { q: '제31회 부산국제영화제 개막작 〈낮과 밤은 서로에게〉의 감독은?', o: ['박찬욱', '김종관', '홍상수', '이창동'], a: 1,
+    e: '〈최악의 하루〉, 〈더 테이블〉, 〈조제〉를 만든 김종관 감독입니다.' },
+  { q: '영화의 네 이야기가 모두 펼쳐지는 장소는?', o: ['기차역', '한 카페', '영화 촬영장', '대학 강의실'], a: 1,
+    e: '서울의 한 카페에서 여름부터 가을까지 네 쌍의 대화가 이어집니다.' },
+  { q: '이 영화는 김종관 감독의 어느 작품과 이어지는 연장선으로 소개됐을까?', o: ['조제', '최악의 하루', '더 테이블', '아무도 없는 곳'], a: 2,
+    e: '2017년 〈더 테이블〉도 한 카페의 테이블에서 네 번의 만남을 그렸습니다.' },
+  { q: '국내 매체 7곳의 평균 판정 점수는? (−2 혹평 ~ +2 호평)', o: ['−0.33', '+0.50', '+1.29', '+2.00'], a: 2,
+    e: '국내 매체 평균은 +1.29로 대체로 호평이었습니다. 해외 매체 3곳의 평균은 −0.33이었습니다.' },
+  { q: 'Variety 리뷰 제목의 요지는?', o: ['올해 최고의 개막작', '거품뿐, 한 방이 없다', '조용한 걸작', '배우들의 축제'], a: 1,
+    e: 'Variety는 “All Froth, No Kick”, 즉 거품뿐 한 방이 없다고 평했습니다.' },
+  { q: '평론에서 가장 많이 호평받은 배우는?', o: ['김민하', '한선화', '심은경', '이희준'], a: 2,
+    e: '심은경이 평론 10편 중 7편에서 호평을 받았습니다. 한선화가 6편으로 뒤를 이었습니다.' },
+  { q: '배우 연기를 비판한 평론은 몇 편이었을까?', o: ['0편', '2편', '4편', '6편'], a: 0,
+    e: '한 편도 없었습니다. 연기는 국내외 모두 칭찬하거나 언급하지 않았습니다.' },
+  { q: '비판 언급이 호평 언급보다 많았던 유일한 평가 요소는?', o: ['연출', '공간·분위기', '촬영·영상미', '극적 재미·대중성'], a: 3,
+    e: '극적 재미·대중성은 비판 4건, 호평 2건이었습니다. “심심하다”는 지적이 여기에 몰렸습니다.' },
+  { q: 'Letterboxd 인기 리뷰 12건의 평균 별점은? (5점 만점)', o: ['2.08', '2.92', '3.54', '4.10'], a: 1,
+    e: '평균 2.92점이었고, 별점은 1점부터 5점까지 넓게 흩어졌습니다.' },
+  { q: '이 영화의 국내 극장 개봉일은?', o: ['10월 6일', '10월 15일', '11월 4일', '12월 24일'], a: 2,
+    e: '10월 6일 부산에서 월드 프리미어로 공개됐고, 11월 4일 국내 개봉합니다.' }
+];
+
+let idx = 0, score = 0;
+const $ = (id) => document.getElementById(id);
+
+function render() {
+  const item = Q[idx];
+  $('qnum').textContent = `${idx + 1} / ${Q.length}`;
+  $('qbar').style.width = (idx / Q.length * 100) + '%';
+  $('qscore').textContent = `점수 ${score}`;
+  $('qtext').textContent = item.q;
+  $('explain').hidden = true;
+  $('nextBtn').hidden = true;
+  const box = $('opts');
+  box.replaceChildren();
+  item.o.forEach((label, k) => {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.type = 'button';
+    b.textContent = label;
+    b.addEventListener('click', () => choose(k));
+    box.appendChild(b);
+  });
+  box.querySelector('button').focus({ preventScroll: true });
+}
+
+function choose(k) {
+  const item = Q[idx];
+  const btns = [...$('opts').children];
+  btns.forEach((b, j) => {
+    b.disabled = true;
+    if (j === item.a) b.classList.add('right');
+    else if (j === k) b.classList.add('wrong');
+  });
+  const ok = k === item.a;
+  if (ok) score++;
+  $('qscore').textContent = `점수 ${score}`;
+  const ex = $('explain');
+  ex.replaceChildren();
+  const head = document.createElement('strong');
+  head.textContent = ok ? '정답입니다. ' : `오답입니다. 정답은 “${item.o[item.a]}”. `;
+  ex.append(head, document.createTextNode(item.e));
+  ex.className = 'explain ' + (ok ? 'ok' : 'no');
+  ex.hidden = false;
+  const nb = $('nextBtn');
+  nb.textContent = idx === Q.length - 1 ? '결과 보기 →' : '다음 문제 →';
+  nb.hidden = false;
+  nb.focus();
+}
+
+function finish() {
+  $('qbar').style.width = '100%';
+  $('card').hidden = true;
+  $('result').hidden = false;
+  $('final').textContent = score;
+  const [v, s] = score >= 9 ? ['낮과 밤을 모두 본 관객', '리뷰 흐름을 완벽하게 꿰고 있습니다.']
+    : score >= 6 ? ['카페 단골손님', '핵심은 다 잡았습니다. 슬라이드로 나머지를 확인해 보세요.']
+    : score >= 3 ? ['옆자리에서 엿들은 손님', '대화를 절반쯤 들었네요. 슬라이드를 보고 다시 도전해 보세요.']
+    : ['방금 카페 문을 연 손님', '슬라이드를 먼저 훑어보면 금방 맞힐 수 있습니다.'];
+  $('verdict').textContent = v;
+  $('verdictSub').textContent = s;
+  $('retry').focus();
+}
+
+$('nextBtn').addEventListener('click', () => { idx++; idx < Q.length ? render() : finish(); });
+$('retry').addEventListener('click', () => { idx = 0; score = 0; $('result').hidden = true; $('card').hidden = false; render(); });
+render();
+</script>
+</body>
+</html>

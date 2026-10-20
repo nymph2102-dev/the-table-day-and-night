@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>낮과 밤은 서로에게 리뷰 분석 · 슬라이드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;600&display=swap">
+<style>
+html,body{margin:0;height:100%;background:#0B1018;overflow:hidden;font-family:'IBM Plex Sans KR',Arial,sans-serif}
+#stage{position:fixed;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center}
+#stage>section{position:absolute;inset:0;box-sizing:border-box;width:1920px;height:1080px;opacity:0;visibility:hidden;transition:opacity .35s ease}
+#stage>section.on{opacity:1;visibility:visible}
+#stage *{box-sizing:border-box}
+#stage h1,#stage h2,#stage h3,#stage p,#stage ol,#stage ul{margin:0}
+#stage ol,#stage ul{padding-left:44px}
+#stage aside{display:none}
+#bar{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:10px 16px;color:#A9B4C2;font-size:14px;background:linear-gradient(transparent,rgba(11,16,24,.85));opacity:.25;transition:opacity .2s}
+#bar:hover,#bar:focus-within{opacity:1}
+#bar button,#bar a{background:#1E2A3A;color:#EEF0F2;border:1px solid #2E3D52;border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer;text-decoration:none}
+#bar button:focus-visible,#bar a:focus-visible{outline:2px solid #D9962B}
+#prog{flex:1;height:4px;background:#2E3D52;border-radius:2px;overflow:hidden}
+#prog i{display:block;height:100%;background:#D9962B;width:0;transition:width .3s}
+#notes{position:fixed;left:16px;right:16px;bottom:64px;max-width:900px;margin:auto;background:#1E2A3A;color:#EEF0F2;border:1px solid #2E3D52;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6}
+@media (prefers-reduced-motion:reduce){#stage>section{transition:none}}
+</style>
+</head>
+<body>
+<div id="stage">
+<section id="cover" data-transition="fade" style="background:#141C28;color:#EEF0F2;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="position:absolute;left:1260px;top:300px;width:460px;height:460px;border-radius:50%;border:2px solid #D9962B;background:linear-gradient(90deg, #D9962B 0%, #D9962B 50%, rgba(20,28,40,0) 50%)"></div>
+<p style="font-size:28px;color:#D9962B;letter-spacing:2px">제31회 부산국제영화제 개막작 · 리뷰 분석</p>
+<div style="display:flex;flex-direction:column;gap:32px">
+<h1 style="font-family:'Gowun Batang', Georgia, serif;font-size:112px;font-weight:400;line-height:1.15">낮과 밤은<br>서로에게</h1>
+<p style="font-size:40px;color:#A9B4C2;width:1060px;line-height:1.4">국내외 평론 10편과 관객 별점 12건으로 본 첫 반응</p>
+</div>
+<p style="font-size:24px;color:#A9B4C2">2026년 10월 20일 · Firecrawl 수집 데이터 기반</p>
+<aside>김종관 감독의 〈낮과 밤은 서로에게〉가 부산국제영화제에서 처음 공개된 뒤 나온 국내외 평론과 관객 별점을 분석한 자료입니다. 원의 왼쪽 절반은 낮, 오른쪽 절반은 밤을 뜻합니다.</aside>
+</section>
+<section id="film" data-transition="fade" style="background:#EEF0EC;color:#1B2430;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;color:#9A5F0A;letter-spacing:2px">작품 개요</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">한 카페, 네 쌍의 대화</h2>
+<p style="font-size:30px;color:#4F5B68;line-height:1.5">감독 김종관 · 80분 · 15세 관람가 · 11월 4일 국내 개봉. 여름에서 가을로 넘어가는 동안 서울의 한 카페를 스쳐 간 네 쌍의 이야기입니다.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#F9FAF7;border:1px solid #D5DAD3;border-radius:16px;padding:32px">
+<p style="font-size:24px;color:#9A5F0A">1장</p>
+<h3 style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;font-weight:700">한여름밤의 꿈</h3>
+<p style="font-size:26px;color:#1B2430">김민하 · 주종혁</p>
+<p style="font-size:24px;color:#4F5B68;line-height:1.5">같은 꿈을 꾼 두 사람이 고장 난 시계로 이어진다</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F9FAF7;border:1px solid #D5DAD3;border-radius:16px;padding:32px">
+<p style="font-size:24px;color:#9A5F0A">2장</p>
+<h3 style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;font-weight:700">아직 나인 사람들</h3>
+<p style="font-size:26px;color:#1B2430">한선화 · 장률</p>
+<p style="font-size:24px;color:#4F5B68;line-height:1.5">중학교 동창의 엉뚱하고 느닷없는 재회</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F9FAF7;border:1px solid #D5DAD3;border-radius:16px;padding:32px">
+<p style="font-size:24px;color:#9A5F0A">3장</p>
+<h3 style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;font-weight:700">이·순·불</h3>
+<p style="font-size:26px;color:#1B2430">심은경 · 이희준</p>
+<p style="font-size:24px;color:#4F5B68;line-height:1.5">웹소설 작가와 영화감독의 불꽃 튀는 첫 만남</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F9FAF7;border:1px solid #D5DAD3;border-radius:16px;padding:32px">
+<p style="font-size:24px;color:#9A5F0A">4장</p>
+<h3 style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;font-weight:700">가을 이야기</h3>
+<p style="font-size:26px;color:#1B2430">전소영 · 김동휘</p>
+<p style="font-size:24px;color:#4F5B68;line-height:1.5">아이돌 준비생과 오랜 연인의 담담한 이별</p>
+</div>
+</div>
+<aside>2017년 〈더 테이블〉의 연장선에 있는 옴니버스 영화입니다. 네 챕터 모두 같은 카페에서 대화만으로 진행됩니다.</aside>
+</section>
+<section id="method" data-transition="fade" style="background:#EEF0EC;color:#1B2430;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;color:#9A5F0A;letter-spacing:2px">데이터와 방법</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">무엇을, 어떻게 모았나</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:4px solid #1B2430;padding:24px 0px 0px 0px">
+<p style="font-family:'Gowun Batang', Georgia, serif;font-size:112px;line-height:1.1">91</p>
+<p style="font-size:28px;color:#4F5B68">Firecrawl 검색으로 모은 리뷰 후보 URL</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:4px solid #1B2430;padding:24px 0px 0px 0px">
+<p style="font-family:'Gowun Batang', Georgia, serif;font-size:112px;line-height:1.1">10</p>
+<p style="font-size:28px;color:#4F5B68">평가가 담긴 평론 (국내 7 · 해외 3)</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;border-top:4px solid #1B2430;padding:24px 0px 0px 0px">
+<p style="font-family:'Gowun Batang', Georgia, serif;font-size:112px;line-height:1.1">12</p>
+<p style="font-size:28px;color:#4F5B68">Letterboxd 관객 별점 (10월 6~10일)</p>
+</div>
+</div>
+<ol style="font-size:28px;color:#1B2430;line-height:1.6">
+<li>8개 검색어로 국내외 리뷰를 찾고, 기자회견·캐스팅 기사는 제외했습니다.</li>
+<li>평론 본문을 스크랩해 −2(혹평)부터 +2(호평)까지 5단계로 판정했습니다.</li>
+<li>평가 요소 6가지와 칭찬받은 배우를 평론마다 분류했습니다.</li>
+</ol>
+<aside>판정과 분류는 Claude가 본문을 읽고 직접 한 것이라 주관이 들어간 값입니다. Instagram 후기는 접근이 막혀 제외했고, 네이버 실관람평은 개봉 전이라 아직 없습니다.</aside>
+</section>
+<section id="gap" data-transition="fade" style="background:#D9962B;color:#141C28;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-size:28px;letter-spacing:2px">핵심 발견</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:80px;font-weight:700;line-height:1.2">국내는 호평했고,<br>해외는 엇갈렸다</h2>
+<div style="display:flex;flex-direction:row;gap:96px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'Gowun Batang', Georgia, serif;font-size:160px;line-height:1.05">+1.29</p>
+<p style="font-size:30px">국내 매체 7곳 평균 판정</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-family:'Gowun Batang', Georgia, serif;font-size:160px;line-height:1.05;color:#1F3360">−0.33</p>
+<p style="font-size:30px">해외 매체 3곳 평균 판정</p>
+</div>
+</div>
+<p style="font-size:24px">판정 척도: −2 혹평 · −1 대체로 혹평 · 0 엇갈림 · +1 대체로 호평 · +2 호평</p>
+<aside>국내 매체 평균은 +1.29, 해외 매체는 −0.33입니다. 해외에서 0점 아래는 Variety와 Screen Daily 두 업계지입니다. UPI는 +1로 호의적이었습니다.</aside>
+</section>
+<section id="scores" data-transition="fade" style="background:#EEF0EC;color:#1B2430;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;color:#9A5F0A;letter-spacing:2px">평론 판정</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">매체별 판정 점수</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:40px;align-items:center">
+<div style="width:24px;height:24px;background:#D9962B;border-radius:4px"></div>
+<p style="font-size:24px;color:#4F5B68">국내 매체</p>
+<div style="width:24px;height:24px;background:#3F6FB0;border-radius:4px"></div>
+<p style="font-size:24px;color:#4F5B68">해외 매체</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">일간스포츠</p>
+<div style="width:300px;height:40px"></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:480px;height:34px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">+2 호평</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">스포츠Q</p>
+<div style="width:300px;height:40px"></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:480px;height:34px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">+2 호평</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">아주경제</p>
+<div style="width:300px;height:40px"></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:480px;height:34px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">+2 호평</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">한국일보</p>
+<div style="width:300px;height:40px"></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:240px;height:34px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">+1 대체로 호평</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">연합뉴스 영문판</p>
+<div style="width:300px;height:40px"></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:240px;height:34px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">+1 대체로 호평</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">코리아중앙데일리</p>
+<div style="width:300px;height:40px"></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:240px;height:34px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">+1 대체로 호평</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">UPI</p>
+<div style="width:300px;height:40px"></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:240px;height:34px;background:#3F6FB0;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">+1 대체로 호평</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">스포츠경향</p>
+<div style="width:300px;height:40px"></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><p style="font-size:24px">0 엇갈림</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">Screen Daily</p>
+<div style="width:300px;height:40px;display:flex;flex-direction:row;align-items:center;justify-content:end;gap:16px"><p style="font-size:24px">−1</p><div style="width:240px;height:34px;background:#3F6FB0;border-radius:8px 0px 0px 8px"></div></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;border-left:2px solid #8A949F"><p style="font-size:24px;padding:0px 0px 0px 16px">대체로 혹평</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:280px;font-size:26px;text-align:right">Variety</p>
+<div style="width:300px;height:40px;display:flex;flex-direction:row;align-items:center;justify-content:end;gap:16px"><p style="font-size:24px">−1</p><div style="width:240px;height:34px;background:#3F6FB0;border-radius:8px 0px 0px 8px"></div></div>
+<div style="width:700px;height:40px;display:flex;flex-direction:row;align-items:center;border-left:2px solid #8A949F"><p style="font-size:24px;padding:0px 0px 0px 16px">대체로 혹평</p></div>
+</div>
+</div>
+<aside>막대 하나가 평론 한 편입니다. 0점 아래는 해외 업계지 Variety와 Screen Daily뿐이고, 스포츠경향은 연기는 칭찬했지만 심심하다고 지적해 0점(엇갈림)으로 판정했습니다.</aside>
+</section>
+<section id="aspects" data-transition="fade" style="background:#EEF0EC;color:#1B2430;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;color:#9A5F0A;letter-spacing:2px">평가 요소</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">칭찬은 연기에, 비판은 서사에</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px;align-items:center">
+<p style="width:300px;font-size:24px;color:#4F5B68;text-align:right">평론 10편 기준</p>
+<p style="width:300px;font-size:24px;color:#3F6FB0;text-align:right">← 비판 언급</p>
+<p style="width:600px;font-size:24px;color:#9A5F0A;padding:0px 0px 0px 16px">호평 언급 →</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:300px;font-size:28px;text-align:right">배우 연기</p>
+<div style="width:300px;height:52px;display:flex;flex-direction:row;align-items:center;justify-content:end;gap:16px"><p style="font-size:24px;color:#4F5B68">0</p></div>
+<div style="width:700px;height:52px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:520px;height:44px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">8</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:300px;font-size:28px;text-align:right">연출</p>
+<div style="width:300px;height:52px;display:flex;flex-direction:row;align-items:center;justify-content:end;gap:16px"><p style="font-size:24px;color:#4F5B68">0</p></div>
+<div style="width:700px;height:52px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:455px;height:44px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">7</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:300px;font-size:28px;text-align:right">공간·분위기</p>
+<div style="width:300px;height:52px;display:flex;flex-direction:row;align-items:center;justify-content:end;gap:16px"><p style="font-size:24px;color:#4F5B68">0</p></div>
+<div style="width:700px;height:52px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:390px;height:44px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">6</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:300px;font-size:28px;text-align:right">촬영·영상미</p>
+<div style="width:300px;height:52px;display:flex;flex-direction:row;align-items:center;justify-content:end;gap:16px"><p style="font-size:24px;color:#4F5B68">0</p></div>
+<div style="width:700px;height:52px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:130px;height:44px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">2</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:300px;font-size:28px;text-align:right">서사·각본</p>
+<div style="width:300px;height:52px;display:flex;flex-direction:row;align-items:center;justify-content:end;gap:16px"><p style="font-size:24px">2</p><div style="width:130px;height:44px;background:#3F6FB0;border-radius:8px 0px 0px 8px"></div></div>
+<div style="width:700px;height:52px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:130px;height:44px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">2</p></div>
+</div>
+<div style="display:flex;flex-direction:row;align-items:center;gap:24px">
+<p style="width:300px;font-size:28px;text-align:right">극적 재미·대중성</p>
+<div style="width:300px;height:52px;display:flex;flex-direction:row;align-items:center;justify-content:end;gap:16px"><p style="font-size:24px">4</p><div style="width:260px;height:44px;background:#3F6FB0;border-radius:8px 0px 0px 8px"></div></div>
+<div style="width:700px;height:52px;display:flex;flex-direction:row;align-items:center;gap:16px;border-left:2px solid #8A949F"><div style="width:130px;height:44px;background:#D9962B;border-radius:0px 8px 8px 0px"></div><p style="font-size:24px">2</p></div>
+</div>
+</div>
+<aside>연기·연출·공간·촬영에 대한 비판은 한 건도 없었습니다. 비판은 서사와 극적 재미에만 몰렸고, 극적 재미는 비판 4건으로 호평 2건보다 많은 유일한 요소입니다.</aside>
+</section>
+<section id="actors" data-transition="fade" style="background:#141C28;color:#EEF0F2;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;color:#D9962B;letter-spacing:2px">배우</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">가장 많이 칭찬받은 두 배우</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#1E2A3A;border-radius:16px;padding:40px">
+<p style="font-size:24px;color:#A9B4C2">3장 이·순·불 · 웹소설 작가 혜진</p>
+<p style="font-family:'Gowun Batang', Georgia, serif;font-size:72px;line-height:1.2">심은경</p>
+<p style="font-size:32px;color:#D9962B"><b>평론 10편 중 7편</b>이 호평</p>
+<p style="font-size:26px;color:#A9B4C2;line-height:1.5">“무리를 이끄는 건 심은경이다” — Screen Daily (번역)</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#1E2A3A;border-radius:16px;padding:40px">
+<p style="font-size:24px;color:#A9B4C2">2장 아직 나인 사람들 · 상미</p>
+<p style="font-family:'Gowun Batang', Georgia, serif;font-size:72px;line-height:1.2">한선화</p>
+<p style="font-size:32px;color:#D9962B"><b>평론 10편 중 6편</b>이 호평</p>
+<p style="font-size:26px;color:#A9B4C2;line-height:1.5">“폭발 직전의 긴장된 에너지를 훌륭하게 담아냈다” — Variety (번역)</p>
+</div>
+</div>
+<p style="font-size:28px;color:#A9B4C2;line-height:1.5">다른 배우: 이희준 3편 · 김민하, 주종혁, 장률, 전소영, 김동휘 각 2편. 연기를 비판한 평론은 없었습니다.</p>
+<aside>심은경과 한선화가 맡은 2장과 3장이 가장 활기찬 챕터로 꼽혔습니다. Variety는 1장 김민하가 실력을 보여 줄 기회가 적었다고 아쉬워했습니다.</aside>
+</section>
+<section id="audience" data-transition="fade" style="background:#EEF0EC;color:#1B2430;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;color:#9A5F0A;letter-spacing:2px">관객 반응</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">관객 별점은 넓게 흩어졌다</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:96px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:16px;width:440px">
+<p style="font-family:'Gowun Batang', Georgia, serif;font-size:160px;line-height:1.05">2.92</p>
+<p style="font-size:30px;color:#4F5B68;line-height:1.5">Letterboxd 인기 리뷰 12건의 평균 별점 (5점 만점)</p>
+<p style="font-size:26px;color:#4F5B68;line-height:1.5">3.5점 이상 6건, 2점 이하 4건</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:end;justify-content:space-between;height:480px;border-bottom:2px solid #8A949F">
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px">1</p><div style="width:64px;height:90px;background:#3F6FB0;border-radius:8px 8px 0px 0px"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px">1</p><div style="width:64px;height:90px;background:#3F6FB0;border-radius:8px 8px 0px 0px"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px">2</p><div style="width:64px;height:180px;background:#3F6FB0;border-radius:8px 8px 0px 0px"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px">1</p><div style="width:64px;height:90px;background:#3F6FB0;border-radius:8px 8px 0px 0px"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px">1</p><div style="width:64px;height:90px;background:#D9962B;border-radius:8px 8px 0px 0px"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px">4</p><div style="width:64px;height:360px;background:#D9962B;border-radius:8px 8px 0px 0px"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px">1</p><div style="width:64px;height:90px;background:#D9962B;border-radius:8px 8px 0px 0px"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px;color:#4F5B68">0</p><div style="width:64px;height:4px;background:#C3C9CF"></div></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:96px"><p style="font-size:24px">1</p><div style="width:64px;height:90px;background:#D9962B;border-radius:8px 8px 0px 0px"></div></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:row;gap:96px">
+<div style="width:440px"></div>
+<div style="flex:1;display:flex;flex-direction:row;justify-content:space-between">
+<p style="font-size:24px;width:96px;text-align:center">★1</p>
+<p style="font-size:24px;width:96px;text-align:center">1.5</p>
+<p style="font-size:24px;width:96px;text-align:center">★2</p>
+<p style="font-size:24px;width:96px;text-align:center">2.5</p>
+<p style="font-size:24px;width:96px;text-align:center">★3</p>
+<p style="font-size:24px;width:96px;text-align:center">3.5</p>
+<p style="font-size:24px;width:96px;text-align:center">★4</p>
+<p style="font-size:24px;width:96px;text-align:center">4.5</p>
+<p style="font-size:24px;width:96px;text-align:center">★5</p>
+</div>
+</div>
+<aside>막대 위 숫자는 해당 별점을 준 리뷰 수입니다. 3.5점이 4건으로 가장 많지만, 1~2점을 준 관객도 4건입니다. 표본이 12건뿐이라 개봉 후 네이버·CGV 실관람평으로 다시 확인해야 합니다.</aside>
+</section>
+<section id="voices" data-transition="fade" style="background:#141C28;color:#EEF0F2;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;color:#D9962B;letter-spacing:2px">엇갈린 반응</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">같은 영화, 다른 문장</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="flex:1;display:flex;flex-direction:column;gap:32px;border-top:4px solid #D9962B;padding:32px 0px 0px 0px">
+<p style="font-size:26px;color:#D9962B">낮 · 호평</p>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;line-height:1.4">“흘려듣던 말 한마디가 저마다의 우주임을 담담히 증명한다”</p><p style="font-size:24px;color:#A9B4C2">아주경제</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;line-height:1.4">“평범한 대화가 특별해지는 영화”</p><p style="font-size:24px;color:#A9B4C2">스포츠Q</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;line-height:1.4">“분위기와 대화로 빚은 조용한 걸작”</p><p style="font-size:24px;color:#A9B4C2">Letterboxd 관객 (번역)</p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:32px;border-top:4px solid #8FB3E6;padding:32px 0px 0px 0px">
+<p style="font-size:26px;color:#8FB3E6">밤 · 비판</p>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;line-height:1.4">“거품뿐, 한 방이 없다”</p><p style="font-size:24px;color:#A9B4C2">Variety (번역)</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;line-height:1.4">“전작보다 야심 차지만, 알맹이는 덜하다”</p><p style="font-size:24px;color:#A9B4C2">Screen Daily (번역)</p></div>
+<div style="display:flex;flex-direction:column;gap:8px"><p style="font-family:'Gowun Batang', Georgia, serif;font-size:36px;line-height:1.4">“그럼에도 심심한 건 어쩔 수 없다”</p><p style="font-size:24px;color:#A9B4C2">스포츠경향</p></div>
+</div>
+</div>
+<aside>호평은 작고 사소한 순간을 들여다보는 시선을, 비판은 사건 없이 대화만 이어지는 밋밋함을 짚었습니다. 같은 특징을 두고 평가가 갈린 셈입니다.</aside>
+</section>
+<section id="takeaway" data-transition="fade" style="background:#EEF0EC;color:#1B2430;font-family:'IBM Plex Sans KR', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;color:#9A5F0A;letter-spacing:2px">정리</p>
+<h2 style="font-family:'Gowun Batang', Georgia, serif;font-size:64px;font-weight:700;line-height:1.2">11월 4일 개봉 전에 알아 둘 세 가지</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#F9FAF7;border:1px solid #D5DAD3;border-radius:16px;padding:40px">
+<h3 style="font-family:'Gowun Batang', Georgia, serif;font-size:40px;font-weight:700;line-height:1.3">배우가 이끄는 영화</h3>
+<p style="font-size:26px;color:#4F5B68;line-height:1.5">연기를 비판한 평론은 0건입니다. 심은경(7편)과 한선화(6편)가 가장 큰 화제 거리입니다.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F9FAF7;border:1px solid #D5DAD3;border-radius:16px;padding:40px">
+<h3 style="font-family:'Gowun Batang', Georgia, serif;font-size:40px;font-weight:700;line-height:1.3">취향을 타는 영화</h3>
+<p style="font-size:26px;color:#4F5B68;line-height:1.5">극적 재미는 비판 4건으로 유일하게 비판이 더 많은 요소입니다. 관객 별점도 1점부터 5점까지 흩어졌습니다.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#F9FAF7;border:1px solid #D5DAD3;border-radius:16px;padding:40px">
+<h3 style="font-family:'Gowun Batang', Georgia, serif;font-size:40px;font-weight:700;line-height:1.3">해외 반응은 미지근</h3>
+<p style="font-size:26px;color:#4F5B68;line-height:1.5">해외 매체 평균은 −0.33입니다. Variety와 Screen Daily 모두 아시아 영화제 위주의 제한적 상영을 예상했습니다.</p>
+</div>
+</div>
+<p style="font-size:24px;color:#4F5B68;line-height:1.5">한계: 평론 10편과 별점 12건의 작은 표본이며, 판정은 Claude가 본문을 읽고 분류한 값입니다. 네이버·CGV 실관람평은 개봉 후 다시 수집해야 합니다.</p>
+<aside>다음 단계로는 개봉 1주 후 Firecrawl로 네이버 실관람평과 CGV 골든에그지수를 다시 모아, 영화제 반응과 일반 관객 반응을 비교하는 것을 제안합니다.</aside>
+</section>
+</div>
+<div id="notes" hidden></div>
+<nav id="bar" aria-label="슬라이드 이동">
+<a href="./">← 홈</a>
+<button id="prev" aria-label="이전 슬라이드">‹</button>
+<span id="count"></span>
+<button id="next" aria-label="다음 슬라이드">›</button>
+<div id="prog"><i></i></div>
+<button id="nbtn">노트 (N)</button>
+<button id="fs">전체 화면 (F)</button>
+</nav>
+<script>
+const stage=document.getElementById('stage');
+const slides=[...stage.children];
+const notes=document.getElementById('notes');
+let i=Math.max(0,Math.min(slides.length-1,(parseInt(location.hash.slice(1))||1)-1));
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform=`translate(-50%,-50%) scale(${s})`;}
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+document.getElementById('count').textContent=`${i+1} / ${slides.length}`;
+document.querySelector('#prog i').style.width=((i+1)/slides.length*100)+'%';
+const a=slides[i].querySelector('aside');notes.textContent=a?a.textContent:'';history.replaceState(null,'','#'+(i+1));}
+document.getElementById('prev').onclick=()=>show(i-1);
+document.getElementById('next').onclick=()=>show(i+1);
+document.getElementById('nbtn').onclick=()=>notes.hidden=!notes.hidden;
+document.getElementById('fs').onclick=()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen?.();
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}else if(['ArrowLeft','PageUp'].includes(e.key)){show(i-1)}else if(e.key==='Home')show(0);else if(e.key==='End')show(slides.length-1);else if(e.key.toLowerCase()==='n')notes.hidden=!notes.hidden;else if(e.key.toLowerCase()==='f')document.getElementById('fs').click();});
+let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX);addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)show(i+(dx<0?1:-1));x0=null;});
+addEventListener('resize',fit);fit();show(i);
+</script>
+</body>
+</html>
